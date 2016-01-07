@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('swiip')
+    .module('cupid')
     .run(['$rootScope', '$state', '$stateParams',
       function ($rootScope, $state, $stateParams) {
         $rootScope.$state = $state;

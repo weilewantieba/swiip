@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-    .module('swiip')
+    .module('cupid')
     .constant('malarkey', malarkey)//定义全局变量
     .constant('moment', moment)//定义全局变量
     .constant('COLORS', {

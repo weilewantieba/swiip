@@ -35,76 +35,13 @@
     <li data-ng-class="{open: $state.includes('app.ui')}">
       <a href="javascript:;">
         <i class="fa fa-toggle-on"></i>
-        <span>UI Elements</span>
+        <span>Account</span>
       </a>
       <ul class="sub-menu">
         <li ui-sref-active="active">
-          <a ui-sref="app.ui.buttons">
-            <span>Buttons</span>
+          <a ui-sref="app.profile">
+            <span>User</span>
           </a>
-        </li>
-        <li ui-sref-active="active">
-          <a ui-sref="app.ui.directives">
-            <span>General</span>
-          </a>
-        </li>
-        <li ui-sref-active="active">
-          <a ui-sref="app.ui.tabs_accordion">
-            <span>Tabs</span>
-          </a>
-        </li>
-        <li ui-sref-active="active">
-          <a ui-sref="app.ui.progressbars">
-            <span>Progress Bars</span>
-          </a>
-        </li>
-        <li ui-sref-active="active">
-          <a ui-sref="app.ui.pagination">
-            <span>Pagination</span>
-          </a>
-        </li>
-        <li ui-sref-active="active">
-          <a ui-sref="app.ui.sliders">
-            <span>Sliders</span>
-          </a>
-        </li>
-        <li ui-sref-active="active">
-          <a ui-sref="app.ui.portlets">
-            <span>Portlets</span>
-          </a>
-        </li>
-        <li ui-sref-active="active">
-          <a ui-sref="app.ui.notifications">
-            <span>Notifications</span>
-          </a>
-        </li>
-        <li ui-sref-active="active">
-          <a ui-sref="app.ui.alert">
-            <span>Alerts</span>
-          </a>
-        </li>
-        <li data-ng-class="{open: $state.includes('icons')}">
-          <a href="javascript:;">
-            <i class="toggle-accordion"></i>
-            <span>Icons</span>
-          </a>
-          <ul class="sub-menu">
-            <li ui-sref-active="active">
-              <a ui-sref="app.ui.fontawesome">
-                <span>Fontawesome</span>
-              </a>
-            </li>
-            <li ui-sref-active="active">
-              <a ui-sref="app.ui.feather">
-                <span>Feather</span>
-              </a>
-            </li>
-            <li ui-sref-active="active">
-              <a ui-sref="app.ui.climacon">
-                <span>Climacon</span>
-              </a>
-            </li>
-          </ul>
         </li>
       </ul>
     </li>
@@ -114,7 +51,7 @@
     <li data-ng-class="{open: $state.includes('app.forms')}">
       <a href="javascript:;">
         <i class="fa fa-tint"></i>
-        <span>Forms</span>
+        <span>Analysis</span>
       </a>
       <ul class="sub-menu">
         <li ui-sref-active="active">
@@ -161,7 +98,7 @@
     <li data-ng-class="{open: $state.includes('app.tables')}">
       <a href="javascript:;">
         <i class="fa fa-tag"></i>
-        <span>Tables</span>
+        <span>App Mangement</span>
       </a>
       <ul class="sub-menu">
         <li ui-sref-active="active">
@@ -192,7 +129,7 @@
     <li data-ng-class="{open: $state.includes('app.charts')}">
       <a href="javascript:;">
         <i class="fa fa-pie-chart"></i>
-        <span>Charts</span>
+        <span>Push Notification</span>
       </a>
       <ul class="sub-menu">
         <li ui-sref-active="active">
@@ -233,7 +170,7 @@
     <li data-ng-class="{open: $state.includes('app.maps')}">
       <a href="javascript:;">
         <i class="fa fa-map-marker"></i>
-        <span>Maps</span>
+        <span>Subscription</span>
         <span class="label label-success pull-right">2</span>
       </a>
       <ul class="sub-menu">
@@ -286,7 +223,7 @@
     <li data-ng-class="{open: $state.includes('app.extras')}">
       <a href="javascript:;">
         <i class="fa fa-trophy"></i>
-        <span>Extras</span>
+        <span>Payment</span>
       </a>
       <ul class="sub-menu">
         <li ui-sref-active="active">
@@ -357,7 +294,7 @@
     <li ui-sref-active="active">
       <a ui-sref="app.widgets">
         <i class="fa fa-toggle-on"></i>
-        <span>Widgets</span>
+        <span>Message</span>
       </a>
     </li>
     <!-- /ui kit -->
@@ -408,67 +345,6 @@
       </ul>
     </li>
     <!-- menu levels -->
-
-    <!-- emails -->
-    <li data-ng-class="{open: $state.includes('app.extras')}">
-      <a href="javascript:;">
-        <i class="fa fa-envelope"></i>
-        <span>Transational Emails</span>
-      </a>
-      <ul class="sub-menu">
-        <li>
-          <a href="http://urban.nyasha.me/email/action.html" target="_blank">
-            <span>Action</span>
-          </a>
-        </li>
-        <li>
-          <a href="http://urban.nyasha.me/email/alert.html" target="_blank">
-            <span>Alert</span>
-          </a>
-        </li>
-        <li>
-          <a href="http://urban.nyasha.me/email/billing.html" target="_blank">
-            <span>Billing</span>
-          </a>
-        </li>
-        <li>
-          <a href="http://urban.nyasha.me/email/progress.html" target="_blank">
-            <span>Progress</span>
-          </a>
-        </li>
-        <li>
-          <a href="http://urban.nyasha.me/email/survey.html" target="_blank">
-            <span>Survey</span>
-          </a>
-        </li>
-        <li>
-          <a href="http://urban.nyasha.me/email/welcome.html" target="_blank">
-            <span>Welcome</span>
-          </a>
-        </li>
-      </ul>
-    </li>
-    <!-- /emails -->
-
-    <!-- customizer -->
-    <li ui-sref-active="active">
-      <a href="http://customizer.nyasha.me/#urban" target="_blank">
-        <i class="fa fa-sliders"></i>
-        <span>Customizer</span>
-        <span class="label label-danger pull-right">hot</span>
-      </a>
-    </li>
-    <!-- /customizer -->
-
-    <!-- documentation -->
-    <li ui-sref-active="active">
-      <a ui-sref="app.documentation">
-        <i class="fa fa-folder"></i>
-        <span>Documentation</span>
-      </a>
-    </li>
-    <!-- /documentation -->
-
     <!-- html version -->
     <li>
       <a href="http://urban.nyasha.me/html/" target="_blank">

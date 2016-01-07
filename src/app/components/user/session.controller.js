@@ -12,5 +12,5 @@ function SessionController($scope, $state) {
 }
 
 angular
-  .module('swiip')
+  .module('cupid')
   .controller('SessionController', ['$scope', '$state', SessionController]);

@@ -2,7 +2,7 @@
   'use strict';
 //声明和定义一个angularJs模块 swiip
   angular
-    .module('swiip', [
+    .module('cupid', [
       'ngAnimate',
       'ngCookies',
       'ngTouch',

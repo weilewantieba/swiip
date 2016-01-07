@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('swiip')
+    .module('cupid')
     .config(config);
 
   /** @ngInject */

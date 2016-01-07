@@ -33,4 +33,4 @@ function quickLaunch($timeout) {
   };
 }
 
-angular.module('swiip').directive('quickLaunch', quickLaunch);
+angular.module('cupid').directive('quickLaunch', quickLaunch);

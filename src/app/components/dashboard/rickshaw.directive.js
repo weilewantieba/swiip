@@ -159,4 +159,4 @@ function Rickshaw($compile, $window) {
   };
 }
 
-angular.module('swiip').directive('rickshaw', Rickshaw);
+angular.module('cupid').directive('rickshaw', Rickshaw);

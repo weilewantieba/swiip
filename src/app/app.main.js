@@ -1,7 +1,7 @@
 'use strict';
 //一个总的Controller，并且进行了很多全局变量的定义
 angular
-  .module('swiip')
+  .module('cupid')
   .controller('AppController', ['$scope', '$http', '$localStorage',
         function AppCtrl($scope, $http, $localStorage) {
 

@@ -203,5 +203,5 @@ function DashboardController($scope, $interval, COLORS) {
 }
 
 angular
-  .module('swiip')
+  .module('cupid')
   .controller('DashboardController', ['$scope', '$interval', 'COLORS', DashboardController]);

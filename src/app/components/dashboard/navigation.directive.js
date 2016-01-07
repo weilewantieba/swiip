@@ -128,4 +128,4 @@ function sideNavigation() {
   };
 }
 
-angular.module('swiip').directive('sideNavigation', sideNavigation);
+angular.module('cupid').directive('sideNavigation', sideNavigation);
