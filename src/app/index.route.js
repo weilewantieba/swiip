@@ -98,19 +98,77 @@
           contentClasses: 'full-height'
         }
       })
-      .state('main', {
-        url: '/main',
-        templateUrl: 'app/main/main.html',
-        controller: 'MainController',
-        controllerAs: 'main'
-      })
       // UI Routes
       .state('app.ui', {
         template: '<div ui-view></div>',
         abstract: true,
         url: '/ui'
+      })
+      // Profile
+  .state("app.profile", {
+      url: "/profile",
+      templateUrl: "app/components/profile/profile-main.html",
+      resolve: {
+        deps: ['$ocLazyLoad', function($ocLazyLoad) {
+          return $ocLazyLoad.load({
+            insertBefore: '#ng_load_plugins_before', // load the above css files before '#ng_load_plugins_before'
+            files: [
+              '../bower_components/font-awesome/css/font-awesome.min.css',
+              '../bower_components/simple-line-icons/css/simple-line-icons.css',
+              '../bower_components/bootstrap/dist/css/bootstrap.min.css',
+              '../bower_components/simple-line-icons/css/simple-line-icons.css',
+              '../bower_components/jquery.uniform/themes/default/css/uniform.default.css',
+              '../bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css',
+              '../bower_components/bootstrap-fileinput/css/fileinput.min.css',
+              '../../assets/styles/profile/components.min.css',
+              '../../assets/styles/profile/layout.min.css',
+              '../../assets/styles/profile/plugins-md.css',
+              '../../assets/styles/profile/profile.min.css',
+              '../../assets/styles/profile/darkblue.min.css',
+              '../../assets/styles/profile/custom.min.css',
+              '../../assets/scripts/profile/app.min.js',
+              '../../assets/scripts/profile/demo.min.js',
+              '../../assets/scripts/profile/excanvas.min.js',
+              '../../assets/scripts/profile/jquery.sparkline.min.js',
+              '../../assets/scripts/profile/layout.min.js',
+              '../../assets/scripts/profile/profile.min.js',
+              '../../assets/scripts/profile/quick-sidebar.min.js',
+              '../../assets/scripts/profile/respond.min.js',
+              '../../assets/scripts/profile/timeline.min.js',
+              '../bower_components/jquery/dist/jquery.min.js',
+              '../bower_components/bootstrap/dist/js/bootstrap.min.js',
+              '../bower_components/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js',
+              '../bower_components/jquery-slimscroll/jquery.slimscroll.min.js',
+              '../bower_components/jquery.uniform/jquery.uniform.min.js',
+              '../bower_components/jquery-slimscroll/jquery.slimscroll.min.js',
+              '../bower_components/malsup.github.com/min/jquery.blockUI.min.js',
+              '../bower_components/bootstrap-switch/dist/js/bootstrap-switch.min.js',
+              '../bower_components/bootstrap-switch/dist/js/bootstrap-switch.min.js',
+              '../bower_components/bootstrap-fileinput/js/fileinput.min.js'
+            ]
+          });
+        }]
+      },
+      data: {pageTitle: 'User Profile'}
+    })
+      // User Profile Help
+      .state("app.profile.help", {
+        url: "/help",
+        templateUrl: "app/components/profile/profile-help.html",
+        data: {pageTitle: 'Profile Help'}
+      })
+      // User Profile Dashboard
+      .state("app.profile.dashboard", {
+        url: "/dashboard",
+        templateUrl: "app/components/profile/profile-dashboard.html",
+        data: {pageTitle: 'Profile Dashboard'}
+      })
+      // User Profile Account
+      .state("app.profile.account", {
+        url: "/account",
+        templateUrl: "app/components/profile/profile-account.html",
+        data: {pageTitle: 'Account'}
       });
-
     $urlRouterProvider.otherwise('/signin');
   }
 
