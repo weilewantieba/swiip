@@ -6,7 +6,6 @@ angular
         function AppCtrl($scope, $http, $localStorage) {
 
       $scope.mobileView = 767;
-
       $scope.app = {
         name: 'swipp',
         author: 'SiYuanLiu',

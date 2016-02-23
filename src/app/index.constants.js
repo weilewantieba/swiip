@@ -18,5 +18,8 @@
       border: '#e4e4e4',
       bodyBg: '#e0e8f2',
       textColor: '#6B6B6B'
+    })
+    .constant('global', {
+      'localUrl': 'http://localhost/NimbusPlatform'
     });
 })();

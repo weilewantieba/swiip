@@ -4,7 +4,7 @@ angular.module('cupid').controller('TodoController', function($rootScope, $scope
     });
 
     // set sidebar closed and body solid layout mode
-    $rootScope.settings.layout.pageContentWhite = true;
-    $rootScope.settings.layout.pageBodySolid = true;
-    $rootScope.settings.layout.pageSidebarClosed = true;
+    //$rootScope.settings.layout.pageContentWhite = true;
+    //$rootScope.settings.layout.pageBodySolid = true;
+    //$rootScope.settings.layout.pageSidebarClosed = true;
 });

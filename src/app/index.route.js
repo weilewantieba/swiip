@@ -15,7 +15,18 @@
     $stateProvider
       .state('app', {
         abstract: true,
-        templateUrl: 'app/components/common/layout.html'
+        templateUrl: 'app/components/common/layout.html',
+        resolve: {
+          deps: ['$ocLazyLoad', function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              insertBefore: '#ng_load_plugins_before', // load the above css files before '#ng_load_plugins_before'
+              files: [
+                '../../assets/scripts/profile/app.min.js',
+                '../../assets/styles/profile/components.min.css'
+              ]
+            });
+          }]
+        }
       })
       .state('app.dashboard', {
         url: '/dashboard',
@@ -104,6 +115,31 @@
         abstract: true,
         url: '/ui'
       })
+      // Todo
+      .state('app.todo', {
+        url: "/todo",
+        templateUrl: "app/components/task/task-todo.html",
+        data: {pageTitle: 'Todo'},
+        controller: "TodoController",
+        resolve: {
+          deps: ['$ocLazyLoad', function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              insertBefore: '#ng_load_plugins_before', // load the above css files before '#ng_load_plugins_before'
+              files: [
+                '../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css',
+                '../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js',
+                '../../assets/styles/todo/todo-2.css',
+                '../bower_components/select2/dist/css/select2.min.css',
+                '../bower_components/select2/dist/js/select2.full.min.js',
+                '../../assets/scripts/todo/todo-2.min.js',
+                'app/components/task/todo.controller.js'
+
+
+              ]
+            });
+          }]
+        }
+      })
       // Profile
   .state("app.profile", {
       url: "/profile",
@@ -114,19 +150,16 @@
             insertBefore: '#ng_load_plugins_before', // load the above css files before '#ng_load_plugins_before'
             files: [
               '../bower_components/font-awesome/css/font-awesome.min.css',
-              '../bower_components/simple-line-icons/css/simple-line-icons.css',
               '../bower_components/bootstrap/dist/css/bootstrap.min.css',
               '../bower_components/simple-line-icons/css/simple-line-icons.css',
               '../bower_components/jquery.uniform/themes/default/css/uniform.default.css',
               '../bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css',
               '../bower_components/bootstrap-fileinput/css/fileinput.min.css',
-              '../../assets/styles/profile/components.min.css',
               '../../assets/styles/profile/layout.min.css',
               '../../assets/styles/profile/plugins-md.css',
               '../../assets/styles/profile/profile.min.css',
               '../../assets/styles/profile/darkblue.min.css',
               '../../assets/styles/profile/custom.min.css',
-              '../../assets/scripts/profile/app.min.js',
               '../../assets/scripts/profile/demo.min.js',
               '../../assets/scripts/profile/excanvas.min.js',
               '../../assets/scripts/profile/jquery.sparkline.min.js',
@@ -135,7 +168,6 @@
               '../../assets/scripts/profile/quick-sidebar.min.js',
               '../../assets/scripts/profile/respond.min.js',
               '../../assets/scripts/profile/timeline.min.js',
-              '../bower_components/jquery/dist/jquery.min.js',
               '../bower_components/bootstrap/dist/js/bootstrap.min.js',
               '../bower_components/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js',
               '../bower_components/jquery-slimscroll/jquery.slimscroll.min.js',

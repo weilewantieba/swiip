@@ -12,7 +12,6 @@ function DashboardController($scope, $interval, COLORS) {
     [7, 7],
     [8, 1]
   ];
-
   $scope.lineDataset = [{
     data: visits,
     color: COLORS.success

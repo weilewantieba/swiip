@@ -1,11 +1,12 @@
-angular.module('cupid').controller('ProfileDashboardController', function($rootScope, $scope, $http, settings) {
+angular.module('cupid').controller('ProfileDashboardController', function($rootScope, $scope, $http, settings,profileAction) {
     $scope.$on('$viewContentLoaded', function() {
         // initialize core components
-        //App.initAjax();
+        App.initAjax();
     });
 
     // set sidebar closed and body solid layout mode
     $rootScope.settings.layout.pageContentWhite = true;
     $rootScope.settings.layout.pageBodySolid = false;
     $rootScope.settings.layout.pageSidebarClosed = false;
+    $scope.profile = profileMessage.getProfile();
 });

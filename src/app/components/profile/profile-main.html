@@ -13,7 +13,7 @@
     </ul>
     <div class="page-toolbar">
         <div class="btn-group pull-right">
-            <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true"> Actions
+            <button type="button" class="btn btn-circle btn-outline red dropdown-toggle" data-toggle="dropdown"  data-delay="1000" data-close-others="true"><i class="fa fa-plus"></i>&nbsp;Actions
                 <i class="fa fa-angle-down"></i>
             </button>
             <ul class="dropdown-menu pull-right" role="menu">
@@ -50,7 +50,7 @@
 </div>
 <!-- END PAGE HEADER-->
 <!-- BEGIN PAGE CONTENT-->
-<div class="row" ng-controller="UserProfileController">
+<div class="row" ng-controller="ProfileDashboardController">
     <div class="col-md-12">
         <!-- BEGIN PROFILE SIDEBAR -->
         <div class="profile-sidebar">
@@ -62,8 +62,8 @@
                 <!-- END SIDEBAR USERPIC -->
                 <!-- SIDEBAR USER TITLE -->
                 <div class="profile-usertitle">
-                    <div class="profile-usertitle-name"> Marcus Doe </div>
-                    <div class="profile-usertitle-job"> Developer </div>
+                    <div class="profile-usertitle-name" ng-bind="profile.firstName"></div>
+                    <div class="profile-usertitle-job" ng-bind="profile.occupation"> Developer </div>
                 </div>
                 <!-- END SIDEBAR USER TITLE -->
                 <!-- SIDEBAR BUTTONS -->
@@ -84,7 +84,7 @@
                                 <i class="icon-settings"></i> Account Settings </a>
                         </li>
                         <li>
-                            <a href="#/todo">
+                          <a ui-sref="app.todo">
                                 <i class="icon-check"></i> Tasks </a>
                         </li>
                         <li ng-class="{active: $state.includes('app.profile.help')}">
