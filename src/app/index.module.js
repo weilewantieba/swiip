@@ -16,7 +16,8 @@
       'ngTouch',
       'ngStorage',
       'ui.utils',
-      'ng-sweet-alert'
+      'ng-sweet-alert',
+      'hSweetAlert'
     ])
 })
 ();
