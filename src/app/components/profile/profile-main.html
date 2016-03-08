@@ -80,7 +80,7 @@
                                 <i class="icon-home"></i> Overview </a>
                         </li>
                         <li ng-class="{active: $state.includes('app.profile.account')}">
-                            <a ui-sref="app.profile.account" ng-click=getUserProfile()>
+                            <a ui-sref="app.profile.account" ng-init=getUserProfile()>
                                 <i class="icon-settings"></i> Account Settings </a>
                         </li>
                         <li>

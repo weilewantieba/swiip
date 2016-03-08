@@ -86,19 +86,19 @@
                     <!-- END CHANGE AVATAR TAB -->
                     <!-- CHANGE PASSWORD TAB -->
                     <div class="tab-pane" id="tab_1_3">
-                        <form action="#">
+                        <form role="form" class="form-layout"  ng-submit="updatePwd()" >
                             <div class="form-group">
                                 <label class="control-label">Current Password</label>
-                                <input type="password" class="form-control" /> </div>
+                                <input type="password" class="form-control" ng-model= data.oldPassword required minlength="5" /> </div>
                             <div class="form-group">
                                 <label class="control-label">New Password</label>
-                                <input type="password" class="form-control" /> </div>
+                                <input type="password" class="form-control"  ng-model= data.newPassword required minlength="5" /> </div>
                             <div class="form-group">
-                                <label class="control-label">Re-type New Password</label>
-                                <input type="password" class="form-control" /> </div>
-                            <div class="margin-top-10">
-                                <a href="#" class="btn btn-circle green-haze"> Save </a>
-                                <a href="#" class="btn btn-circle red-haze"> Cancel </a>
+                                <label class="control-label" >Re-type New Password</label>
+                                <input type="password" class="form-control" ng-model= data.repeatPassword required minlength="5" /> </div>
+                            <div class="margin-top-10 form-inputs">
+                                <button class="btn btn-circle green-haze" type="submit" > Save </button>
+                                <button class="btn btn-circle red-haze"> Cancel </button>
                             </div>
                         </form>
                     </div>
