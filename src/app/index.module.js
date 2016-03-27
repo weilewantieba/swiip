@@ -16,6 +16,8 @@
       'ngTouch',
       'ngStorage',
       'ui.utils',
+      'ng-sweet-alert',
+      'hSweetAlert',
       'objectTable'
     ])
 })
