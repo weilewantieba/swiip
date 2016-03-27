@@ -15,7 +15,8 @@
       'toastr',
       'ngTouch',
       'ngStorage',
-      'ui.utils'
+      'ui.utils',
+      'objectTable'
     ])
 })
 ();

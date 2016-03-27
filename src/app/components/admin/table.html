@@ -1,0 +1,30 @@
+<div data-ng-controller="TableController">
+  <table  object-table
+          from-url="http://beta.json-generator.com/api/json/get/DXXROxj"
+          data="exportDataVariable"
+          display="10"
+          headers="Name, Eye color, Age,Balance,Company,Home address,Favorite Fruit,option"
+          fields="name,eyeColor,age,balance,company,address,favoriteFruit"
+          sorting="compound">
+    <tbody>
+    <tr>
+      <td editable>{{::item.name}}</td>
+      <td ><div class="{{::item.eyeColor}} eye"></div>
+        {{::item.eyeColor}}
+      </td>
+      <td>{{::item.age}}</td>
+      <td style="background-color:rgb(212, 255, 227)">{{::item.balance}}</td>
+      <td>{{::item.company}}</td>
+      <td>{{::item.address}}</td>
+      <td>{{::item.favoriteFruit}}</td>
+      <td><button ng-click="$owner.showItem(item);setSelected(item)">编辑</button></td>
+    </tr>
+    </tbody>
+  </table>
+<p>selected</p>
+  <pre>
+
+    {{report.selected}}
+  </pre>
+
+</div>

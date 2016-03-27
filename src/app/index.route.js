@@ -28,6 +28,21 @@
           }]
         }
       })
+      .state('admin', {
+        abstract: true,
+        templateUrl: 'app/components/common/admin-layout.html',
+        resolve: {
+          deps: ['$ocLazyLoad', function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              insertBefore: '#ng_load_plugins_before', // load the above css files before '#ng_load_plugins_before'
+              files: [
+                '../../assets/scripts/profile/app.min.js',
+                '../../assets/styles/profile/components.min.css'
+              ]
+            });
+          }]
+        }
+      })
       .state('app.dashboard', {
         url: '/dashboard',
         templateUrl: 'app/components/dashboard/dashboard.html',
@@ -66,6 +81,63 @@
           title: 'Dashboard'
         }
       })
+      .state('admin.dashboard', {
+        url: '/admin/dashboard',
+        templateUrl: 'app/components/admin/dashboard/dashboard.html',
+        resolve: {
+          deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+            return $ocLazyLoad.load([
+              {
+
+                insertBefore: '#load_styles_before',
+                files: [
+                  'assets/styles/climacons-font.css',
+                  '../bower_components/rickshaw/rickshaw.min.css'
+                ]
+              },
+              {
+                serie: true,
+                files: [
+                  '../bower_components/d3/d3.min.js',
+                  '../bower_components/rickshaw/rickshaw.min.js',
+                  '../bower_components/Flot/jquery.flot.js',
+                  '../bower_components/Flot/jquery.flot.resize.js',
+                  '../bower_components/Flot/jquery.flot.pie.js',
+                  '../bower_components/Flot/jquery.flot.categories.js'
+                ]
+              },
+              {
+                name: 'angular-flot',
+                files: [
+                  '../bower_components/angular-flot/angular-flot.js'
+                ]
+              }]).then(function () {
+              return $ocLazyLoad.load('app/components/admin/dashboard/dashboard.controller.js');
+            });
+          }]
+        },
+        data: {
+          title: 'Admin Dashboard'
+        }
+      })
+      .state('admin.table', {
+        url: '/admin/table',
+        templateUrl: 'app/components/admin/table.html',
+        resolve: {
+          deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+            return $ocLazyLoad.load([
+
+              ]
+            ).then(function () {
+              return $ocLazyLoad.load('app/components/admin/table.controller.js');
+            });
+          }]
+        },
+        data: {
+          title: 'Admin Dashboard'
+        }
+      })
+
       .state('user', {
         templateUrl: 'app/components/common/session.html'
       })

@@ -1,0 +1,77 @@
+<div class="brand">
+
+  <!-- logo -->
+  <div class="brand-logo">
+    <img data-ng-src="assets/images/logo.png" height="15" alt="">
+  </div>
+  <!-- /logo -->
+
+  <!-- toggle small sidebar menu -->
+  <a href="javascript:;" class="toggle-sidebar hidden-xs hamburger-icon v3" data-ng-click="app.layout.isSmallSidebar = !app.layout.isSmallSidebar">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </a>
+  <!-- /toggle small sidebar menu -->
+
+</div>
+
+<!-- main navigation -->
+<nav role="navigation" side-navigation>
+
+  <ul class="nav">
+
+    <!-- dashboard -->
+    <li ui-sref-active="active">
+      <a href="#/admin/dashboard">
+        <i class="fa fa-flask"></i>
+        <span>Dashboard</span>
+      </a>
+    </li>
+    <!-- /dashboard -->
+    <!-- App Management -->
+    <li data-ng-class="{open: $state.includes('app.ui')}">
+      <a href="javascript:;">
+        <i class="fa fa-toggle-on"></i>
+        <span>App Management</span>
+      </a>
+    </li>
+    <!-- /App Management -->
+    <!-- Admin Management -->
+    <li data-ng-class="{open: $state.includes('app.ui')}">
+      <a href="javascript:;">
+        <i class="fa fa-toggle-on"></i>
+        <span>Admin Management</span>
+      </a>
+      <ul class="sub-menu">
+        <li ui-sref-active="active">
+          <a ui-sref="admin.user">
+            <span>User Management</span>
+          </a>
+          <ul class="sub-menu">
+            <li ui-sref-active="active">
+              <a ui-sref="admin.user.appUser">
+                <span>appUser</span>
+              </a>
+            </li>
+            <li ui-sref-active="active">
+              <a ui-sref="admin.user.client">
+                <span>client</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="sub-menu">
+        <li ui-sref-active="active">
+          <a ui-sref="admin.account">
+            <span>Account Management</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <!-- /Admin Management -->
+  </ul>
+</nav>
+<!-- /main navigation -->
