@@ -144,7 +144,12 @@
         resolve: {
           deps: ['$ocLazyLoad', function ($ocLazyLoad) {
             return $ocLazyLoad.load([
-
+              {
+                insertBefore: '#load_styles_before',
+                files: [
+                  'app/components/admin/user/style.css',
+                ]
+              }
               ]
             ).then(function () {
               return $ocLazyLoad.load('app/components/admin/account/account.controller.js');
@@ -152,9 +157,28 @@
           }]
         },
         data: {
-          title: 'Admin Dashboard'
+          title: 'Admin Account Dashboard'
         }
       })
+
+      .state('admin.user', {
+        url: '/admin/user',
+        templateUrl: 'app/components/admin/user/user.html',
+        resolve: {
+          deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+            return $ocLazyLoad.load([
+
+              ]
+            ).then(function () {
+              return $ocLazyLoad.load('app/components/admin/user/user.controller.js');
+            });
+          }]
+        },
+        data: {
+          title: 'Admin User Dashboard'
+        }
+      })
+
       .state('user', {
         templateUrl: 'app/components/common/session.html'
       })

@@ -18,7 +18,9 @@
       'ui.utils',
       'ng-sweet-alert',
       'hSweetAlert',
-      'objectTable'
+      'objectTable',
+      'xeditable',
+      'smart-table'
     ])
 })
 ();
