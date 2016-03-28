@@ -138,12 +138,42 @@
         }
       })
 
+      .state('admin.account', {
+        url: '/admin/account',
+        templateUrl: 'app/components/admin/account/account.html',
+        resolve: {
+          deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+            return $ocLazyLoad.load([
+
+              ]
+            ).then(function () {
+              return $ocLazyLoad.load('app/components/admin/account/account.controller.js');
+            });
+          }]
+        },
+        data: {
+          title: 'Admin Dashboard'
+        }
+      })
       .state('user', {
         templateUrl: 'app/components/common/session.html'
       })
       .state('user.signin', {
         url: '/signin',
         templateUrl: 'app/components/user/extras-signin.html',
+        resolve: {
+          deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+            return $ocLazyLoad.load('app/components/user/session.controller.js');
+          }]
+        },
+        data: {
+          appClasses: 'bg-white usersession',
+          contentClasses: 'full-height'
+        }
+      })
+      .state('user.adminsignin', {
+        url: '/admin/signin',
+        templateUrl: 'app/components/user/admin-signin.html',
         resolve: {
           deps: ['$ocLazyLoad', function ($ocLazyLoad) {
             return $ocLazyLoad.load('app/components/user/session.controller.js');

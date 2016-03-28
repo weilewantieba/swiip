@@ -1,0 +1,31 @@
+<div data-ng-controller="AdminAccountController">
+    <table  object-table
+            data = "accounts"
+            display = "10"
+            headers = "Name, Email, Status, Option"
+            fields = "name, email, status"
+            sorting = "compound"
+            resize="true"
+            editable = 'false'
+            drag-columns="true">
+        <tbody>
+            <tr>
+                <td editable>{{item.name}}</td>
+                <td editable>{{::item.email}}</td>
+                <td editable>{{::item.status}}</td>
+                <td>
+                    <a href="#" class="on-default edit-row" ng-click="$owner.showItem(item);setSelected(item)">
+                        <i class="fa fa-pencil"></i>
+                    </a>
+                    <a href="#" class="on-default remove-row">
+                        <i class="fa fa-trash-o"></i>
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+
+    </table>
+
+</div>
