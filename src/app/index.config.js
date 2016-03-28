@@ -16,7 +16,8 @@
     toastrConfig.positionClass = 'toast-top-right';
     toastrConfig.preventDuplicates = true;
     toastrConfig.progressBar = true;
-    stConfig.pagination.template = 'app/components/admin/user/pagination.custom.html';
+    //自定义分页
+    //stConfig.pagination.template = 'app/components/admin/user/pagination.custom.html';
   }
 
 })();
