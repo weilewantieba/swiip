@@ -20,7 +20,8 @@
       'hSweetAlert',
       'objectTable',
       'xeditable',
-      'smart-table'
+      'smart-table',
+      'ngTable'
     ])
 })
 ();
