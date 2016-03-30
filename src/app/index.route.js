@@ -167,7 +167,9 @@
         resolve: {
           deps: ['$ocLazyLoad', function ($ocLazyLoad) {
             return $ocLazyLoad.load([
-
+               '../../assets/styles/profile/layout.min.css',
+               '../bower_components/bootstrap/dist/js/bootstrap.min.js',
+               '../bower_components/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js',
               ]
             ).then(function () {
               return $ocLazyLoad.load('app/components/admin/user/user.controller.js');
