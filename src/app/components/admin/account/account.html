@@ -1,4 +1,8 @@
 <div data-ng-controller="AdminAccountController">
+  <button type="button" class="btn btn-default" ng-click="open()">Open me!</button>
+  <button type="button" class="btn btn-default btn-lg" ng-click="openAside('left', true)">
+    <span class="glyphicon glyphicon-align-justify"></span> Left
+  </button>
     <table  object-table
             data = "accounts"
             display = "10"
@@ -10,11 +14,11 @@
             drag-columns="true">
         <tbody>
             <tr>
-                <td editable>{{item.name}}</td>
-                <td editable>{{::item.email}}</td>
-                <td editable>{{::item.status}}</td>
+                <td>{{item.name}}</td>
+                <td>{{::item.email}}</td>
+                <td>{{::item.status}}</td>
                 <td>
-                    <a href="#" class="on-default edit-row" ng-click="$owner.showItem(item);setSelected(item)">
+                    <a href="#" class="on-default edit-row" ng-click="$owner.getItem(item);setSelected(item);$owner.openAside('left', true)">
                         <i class="fa fa-pencil"></i>
                     </a>
                     <a href="#" class="on-default remove-row">

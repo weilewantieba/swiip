@@ -21,7 +21,8 @@
       'objectTable',
       'xeditable',
       'smart-table',
-      'ngTable'
+      'ngTable',
+      'ngAside'
     ])
 })
 ();

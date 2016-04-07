@@ -1,0 +1,30 @@
+<div data-ng-controller="AdminAccountController">
+    <form role="form" action="#">
+      <div class="form-group">
+        <label class="control-label">Name</label>
+        <input type="text" placeholder="" class="form-control" ng-model=item.name /></div>
+      <div class="form-group">
+        <label class="control-label" >Email</label>
+        <input type="text" placeholder="Doe" class="form-control" ng-model=item.email  /> </div>
+      <div class="form-group">
+        <label class="control-label">Mobile Number</label>
+        <input type="text" placeholder="+1 646 580 DEMO (6284)" class="form-control"   ng-model=profile.mobileNumber /> </div>
+      <div class="form-group">
+        <label class="control-label" >Interests</label>
+        <input type="text" placeholder="Design, Web etc." class="form-control" ng-model=profile.interests /> </div>
+      <div class="form-group">
+        <label class="control-label">Occupation</label>
+        <input type="text" placeholder="Web Developer" class="form-control"  ng-model=profile.occupation /> </div>
+      <div class="form-group">
+        <label class="control-label">About</label>
+        <textarea class="form-control" rows="3" placeholder="We are KeenThemes!!!" ng-model=profile.about></textarea>
+      </div>
+      <div class="form-group">
+        <label class="control-label">Website Url</label>
+        <input type="text" placeholder="http://www.mywebsite.com" class="form-control" ng-model=profile.websiteUrl /> </div>
+      <div class="margiv-top-10">
+        <a href="#" class="btn btn-circle green-haze"> Save   </a>
+        <a href="#" class="btn btn-circle red-haze"> Cancel </a>
+      </div>
+    </form>
+</div>
