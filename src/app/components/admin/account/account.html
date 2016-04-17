@@ -1,12 +1,12 @@
-<div data-ng-controller="AdminAccountController">
-  <button type="button" class="btn btn-default" ng-click="open()">Open me!</button>
-  <button type="button" class="btn btn-default btn-lg" ng-click="openAside('left', true)">
-    <span class="glyphicon glyphicon-align-justify"></span> Left
-  </button>
+<div data-ng-controller="AdminAccountController" ng-init=getAccountList_admin()>
+  <!--<button type="button" class="btn btn-default" ng-click="open()">Open me!</button>-->
+  <!--<button type="button" class="btn btn-default btn-lg" ng-click="openAside('left', true)">-->
+    <!--<span class="glyphicon glyphicon-align-justify"></span> Left-->
+  <!--</button>-->
     <table  object-table
             data = "accounts"
-            display = "10"
-            headers = "Name, Email, Status, Option"
+            display = "5"
+            headers = "Name, Email, Status,CreateDate, Option"
             fields = "name, email, status"
             sorting = "compound"
             resize="true"
@@ -15,18 +15,30 @@
         <tbody>
             <tr>
                 <td>{{item.name}}</td>
-                <td>{{::item.email}}</td>
-                <td>{{::item.status}}</td>
+                <td>{{item.email}}</td>
+                <td><span class="label label-table label-success">{{item.status}}</span></td>
+                <td>{{item.createDate}}</td>
                 <td>
-                    <a href="#" class="on-default edit-row" ng-click="$owner.getItem(item);setSelected(item);$owner.openAside('left', true)">
+                    <a href="#" class="on-default edit-row" ng-click="setSelected(item);$owner.openAside('left', true,item)">
                         <i class="fa fa-pencil"></i>
                     </a>
+                  <!-- 暂时不进行删除操作
                     <a href="#" class="on-default remove-row">
                         <i class="fa fa-trash-o"></i>
                     </a>
+                    -->
                 </td>
             </tr>
             </tbody>
+        <tfoot>
+            <tr>
+                <td>Total Account:{{$filtered.length}}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tfoot>
         </table>
 
 
