@@ -26,7 +26,8 @@ function AdminAccountController($scope,$uibModal,$aside,accountSettingAction,swe
     $scope.asideState = {
       open: false
     };
-    $scope.openAside = function(position, backdrop,item) {
+    $scope.openAside = function(position, backdrop,item,index) {
+      console.log(index);
       $scope.asideState = {
         open: true,
         position: position,
@@ -35,7 +36,7 @@ function AdminAccountController($scope,$uibModal,$aside,accountSettingAction,swe
         $scope.asideState.open = false;
       }
      //console.log( $scope.asideState)
-      $aside.open({
+      var callback=$aside.open({
         templateUrl: 'app/components/admin/account/aside.html',
         placement: position,
         size: 'lg',
@@ -46,14 +47,16 @@ function AdminAccountController($scope,$uibModal,$aside,accountSettingAction,swe
           }
         },
         controller: function($scope, $uibModalInstance,item) {
-          sourItem = item;
           $scope.item = item;
+          $scope.master = angular.copy(item);
           $scope.updateAccount_admin= function () {
             //todo 处理重复密码
-            var promise = accountSettingAction.updateAccount('admin','Builder',sessionStorage.getItem('adminId'),sessionStorage.getItem('token'),item.id,item.email,item.name,item.desc); // 同步调用，获得承诺接口
+            var promise = accountSettingAction.updateAccount('admin','Builder',sessionStorage.getItem('adminId'),sessionStorage.getItem('token'), $scope.master.id, $scope.master.email, $scope.master.name, $scope.master.desc); // 同步调用，获得承诺接口
             promise.then(function(result) {  // 调用承诺API获取数据 .resolve
               if(result.status === 200){
                 if(result.data.code === 200) {
+                  item = angular.copy($scope.master);
+                  console.log(item);
                   sweet.show('successful', '更新成功');
                 }else{
                   sweet.show('error', '参数错误');
@@ -66,7 +69,7 @@ function AdminAccountController($scope,$uibModal,$aside,accountSettingAction,swe
             })}
           $scope.ok = function(e) {
             //调用更新Account资料的服务
-            $uibModalInstance.close();
+            $uibModalInstance.close($scope.master);
             e.stopPropagation();
           };
           $scope.cancel = function(e) {
@@ -75,7 +78,12 @@ function AdminAccountController($scope,$uibModal,$aside,accountSettingAction,swe
             e.stopPropagation();
           };
         }
-      }).result.then(postClose, postClose);
+      });
+
+      callback.result.then(function(res){
+        $scope.accounts[index]=res;
+      });
+
     };
   ////data
   //	$scope.accounts = [{name: "Moroni", email: 'weilewantieba@126.com',phone: 13590052533, status: 1},

@@ -51,7 +51,8 @@ function SessionController($scope, $state,userAction,sweet) {
 
   $scope.adminLogin = function () {
     var promise = userAction.login('admin','Builder',$scope.email,$scope.pwd); // 同步调用，获得承诺接口
-    promise.then(function(result) {  // 调用承诺API获取数据 .resolve
+    promise.then(function(result) {
+      console.log(result)// 调用承诺API获取数据 .resolve
       if(result.status === 200){
         if(result.data.code === 200) {
           sessionStorage.setItem('token', result.data.msg.token);
