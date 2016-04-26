@@ -26,6 +26,16 @@ function AdminAccountController($scope,$uibModal,$aside,accountSettingAction,swe
     $scope.asideState = {
       open: false
     };
+    /**
+     * 打开模块对话框
+     *
+     * @param position {string} 模块对话框弹出位置
+     * @param backdrop
+     * @param item {object} 展示数据
+     * @param index {number} 数组下表
+     * @date 2016-04-07
+     * @author weilewantieba@126.com
+     */
     $scope.openAside = function(position, backdrop,item,index) {
       console.log(index);
       $scope.asideState = {
@@ -36,7 +46,7 @@ function AdminAccountController($scope,$uibModal,$aside,accountSettingAction,swe
         $scope.asideState.open = false;
       }
      //console.log( $scope.asideState)
-      var callback=$aside.open({
+      var callback = $aside.open({
         templateUrl: 'app/components/admin/account/aside.html',
         placement: position,
         size: 'lg',
@@ -47,8 +57,11 @@ function AdminAccountController($scope,$uibModal,$aside,accountSettingAction,swe
           }
         },
         controller: function($scope, $uibModalInstance,item) {
+          //item赋值给模块对话框的控制器
           $scope.item = item;
+          //拷贝一份元数据
           $scope.master = angular.copy(item);
+          //更新Account信息Api调用
           $scope.updateAccount_admin= function () {
             //todo 处理重复密码
             var promise = accountSettingAction.updateAccount('admin','Builder',sessionStorage.getItem('adminId'),sessionStorage.getItem('token'), $scope.master.id, $scope.master.email, $scope.master.name, $scope.master.desc); // 同步调用，获得承诺接口
@@ -67,11 +80,13 @@ function AdminAccountController($scope,$uibModal,$aside,accountSettingAction,swe
             }, function(data) {  // 处理错误 .reject
               console.log(data);
             })}
+          //成功调用
           $scope.ok = function(e) {
-            //调用更新Account资料的服务
+            //讲元数组返回到上级controller
             $uibModalInstance.close($scope.master);
             e.stopPropagation();
           };
+          //失败调用
           $scope.cancel = function(e) {
             //解决双向绑定的数据问题
             $uibModalInstance.dismiss();
@@ -79,11 +94,10 @@ function AdminAccountController($scope,$uibModal,$aside,accountSettingAction,swe
           };
         }
       });
-
+      //获取callback数据更新account信息
       callback.result.then(function(res){
-        $scope.accounts[index]=res;
+        $scope.accounts[index]= res;
       });
-
     };
   ////data
   //	$scope.accounts = [{name: "Moroni", email: 'weilewantieba@126.com',phone: 13590052533, status: 1},
